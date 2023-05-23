@@ -3,9 +3,9 @@ Source code for the tutorial on how to use the job system
 
 # Intro
 Performance is crucial for real-time 3D software, like games.
-The Unity Job System combined with Burst is a great tool to obtain a huge performance increase for parralel tasks!
+The Unity Job System combined with Burst is a great tool to obtain a huge performance increase for parallel tasks!
 In my current graduation project, where I deform meshes in real-time, it got me from 5ms to 0.1ms on the main thread. This is done with a mesh with over 80.000 vertices. This performance is great for standalone VR.
-Most calculations in for loops can be made parralel using the job system, as long as it does not make any references to managed code. References to Transform can be made using their own job type, as this is a common use case.
+Most calculations in for loops can be made parallel using the job system, as long as it does not make any references to managed code. References to Transform can be made using their own job type, as this is a common use case.
 This guide will show you the basics of how to implement the job system in your project!
 
 This guide is made in Unity 2021.3LTS, but will also work in other Unity versions!
