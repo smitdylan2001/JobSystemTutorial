@@ -1,5 +1,8 @@
-# JobSystemTutorial
+# How to use the Unity Job System with Burst
 Source code for the tutorial on how to use the job system
+
+[![https://youtube.com/watch?v=1VZaW4_quzI](https://img.youtube.com/vi1VZaW4_quzI/hqdefault.jpg)](https://www.youtube.com/watch?v=1VZaW4_quzI)
+
 
 # Intro
 Performance is crucial for real-time 3D software, like games.
