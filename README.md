@@ -1,8 +1,7 @@
 # How to use the Unity Job System with Burst
 Source code for the tutorial on how to use the job system
 
-[![https://www.youtube.com/watch?v=1VZaW4_quzI](https://img.youtube.com/vi/1VZaW4_quzI/0.jpg)]((https://www.youtube.com/watch?v=1VZaW4_quzI))
-
+[![https://www.youtube.com/watch?v=1VZaW4_quzI](https://img.youtube.com/vi/1VZaW4_quzI/0.jpg)](https://www.youtube.com/watch?v=1VZaW4_quzI)
 
 
 # Intro
