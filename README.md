@@ -15,6 +15,12 @@ This guide will show you the basics of how to implement the job system in your p
 This guide is made in Unity 2021.3LTS, but will also work in other Unity versions.
 
 
+# What you need to know
+
+To properly follow this guide, it is expected that you know the basics of Unity development and C#. 
+Topics like performance metrics, Unity Profiler, and coding conventions will be used to demonstrate the Unity Job System combined with the Unity Burst Compiler. More advanced code conventions will be mentioned in the video, but are not required to write code using Unity Jobs + Burst. These can be seen as additional info that can be looked into more deeply when you are working with extremely high-performance codes, like real-time physics simulations of a 3D environment.
+
+
 # How to Implement
 
 The original non-jobified code can be found in the [TutorialStart branch](https://github.com/smitdylan2001/JobSystemTutorial/tree/TutorialStart). You can use this if you want to learn how to implement the job system step by step with a demo project!
