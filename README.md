@@ -5,6 +5,7 @@ Source code for the tutorial on how to use the job system
 
 
 # Intro
+
 Performance is crucial for real-time 3D software, like games.
 The Unity Job System combined with Burst is a great tool to obtain a huge performance increase for parallel tasks.
 In my current graduation project, where I deform meshes in real-time, it got me from 5ms to 0.1ms on the main thread. This is done with a mesh with over 80.000 vertices. This performance is great for standalone VR.
@@ -15,17 +16,20 @@ This guide is made in Unity 2021.3LTS, but will also work in other Unity version
 
 
 # How to Implement
+
 The original non-jobified code can be found in the [TutorialStart branch](https://github.com/smitdylan2001/JobSystemTutorial/tree/TutorialStart). You can use this if you want to learn how to implement the job system step by step with a demo project!
 The focus on this guide will be on a `for` loop, some steps can be skipped if you use a singular job.
 
 
 ## Step 1 - Install Burst, Collections, and Mathematics
+
 - Open your project and head to the Package Manager
 - Go to Unity Registry and install Burst, Collections, and Mathematics
 - (optional) Go to [project root]/Packages/manifest.json and change the Burst and Collections package to the latest version available. (at the point of recording 1.8.4 for burst, and 1.4.0 for Collections. Collections is on 2.1.4 for 2022.2+)
 - Restart the Unity editor for Burst to apply
 
 ## Step 2 - Write out the job
+
 - (optional - to manage code) Make a new script for your jobs
 - Make sure you call `using Unity.Jobs; using Unity.Burst; using Unity.Collections;` at the top of your script
 - Make a new struct and inherit from `IJobParralelFor` when using `for` loops, `IJobParralelForTransform` when using a `for` loop where each entry has a transform component, `IJob` when using single jobs, `IJobFor` when using a loop in sequence instead of parallel 
@@ -38,6 +42,7 @@ The focus on this guide will be on a `for` loop, some steps can be skipped if yo
 - Add `[BurstCompile]` to the top of the struct so Burst can compile the job
 
 ## Step 3 - Prepare and schedule the job
+  
 - Go to the script that the `for` loop was originally in
 - Change the lists and arrays to their NativeCollection, mathematics compatible counterparts (example: Vector3[] -> NativeArray<float3>)
 - Create a new job (example: `deformJob = new DeformMeshJob()`) and fill in the variables required
@@ -49,11 +54,17 @@ The focus on this guide will be on a `for` loop, some steps can be skipped if yo
 - Deallocate any Native Collections, otherwise you might cause a memory leak.
   
   
+  
 # References
+  
 Official Job System documentation: https://docs.unity3d.com/Manual/JobSystem.html
+  
+Official Burst Compiler documentation: https://docs.unity3d.com/Packages/com.unity.burst@1.8/manual/index.html
   
 Latest Burst version: https://docs.unity3d.com/Packages/com.unity.burst@1.8/changelog/CHANGELOG.html
   
 Latest Collections verion (Unity 2021): https://docs.unity3d.com/Packages/com.unity.collections@1.4/changelog/CHANGELOG.html
+
 Latest Collections version (Unity 2022+): https://docs.unity3d.com/Packages/com.unity.collections@2.1/changelog/CHANGELOG.html
+
 Latest Mathematics version: https://docs.unity3d.com/Packages/com.unity.mathematics@1.2/changelog/CHANGELOG.html
